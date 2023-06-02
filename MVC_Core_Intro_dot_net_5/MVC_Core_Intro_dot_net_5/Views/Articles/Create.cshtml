@@ -1,0 +1,63 @@
+﻿@model Article
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row container">
+    <div class="d-flex justify-content-center display-6">Create Brand</div>
+    <hr />
+    <div class="col-12 d-flex justify-content-end mb-2">
+        <a asp-controller="Articles" asp-action="Index" class="btn btn-success btn-sm bi bi-arrow-left" title="Back"> </a>
+    </div>
+    <form method="post" asp-controller="Articles" asp-action="Create">
+
+        <div class="row mb-2">
+            <div class="col-3 text-end">
+                <label asp-for="Title" class="col-form-label text-end"></label>
+            </div>
+            <div class="col-4">
+                <input asp-for="Title" class="form-control col-4" />
+            </div>
+            <span asp-validation-for="Title" class="text-danger col-3"></span>
+        </div>
+        <div class="row mb-2">
+            <div class="col-3 text-end">
+                <label asp-for="Rating" class="col-form-label text-end"></label>
+            </div>
+            <div class="col-4">
+                <input asp-for="Rating" class="form-control col-4" />
+            </div>
+            <span asp-validation-for="Rating" class="text-danger col-3"></span>
+        </div>
+        <div class="row mb-2">
+            <div class="col-3 text-end">
+                <label asp-for="PublishDate" class="col-form-label text-end"></label>
+            </div>
+            <div class="col-4">
+                <input asp-for="PublishDate" class="form-control col-4" />
+            </div>
+            <span asp-validation-for="PublishDate" class="text-danger col-3"></span>
+        </div>
+        <div class="col-1" style="margin-left:30rem;">
+            <button type="submit" title="save" class="btn btn-outline-success">Save</button>
+        </div>
+    </form>
+</div>
+
+@section styles{
+    <link href="~/libs/datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="~/libs/datepicker/css/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+    <link href="~/libs/icons/font/bootstrap-icons.css" rel="stylesheet" />
+}
+
+@section scripts{
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/validate/jquery.validate.js"></script>
+    <script src="~/libs/validate/jquery.validate.unobtrusive.js"></script>
+    <script src="~/libs/datepicker/js/bootstrap-datepicker.js"></script>
+
+    <script>
+
+    </script>
+}
+

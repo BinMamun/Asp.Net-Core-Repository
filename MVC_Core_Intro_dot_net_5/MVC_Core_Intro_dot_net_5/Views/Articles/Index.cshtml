@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Article>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container">
+    <div class="display-6 text-center">Articles</div>
+    <hr />
+    <div class="d-flex justify-content-end mb-1">
+    <a asp-controller="Articles" asp-action="Create" class="btn btn-success btn-sm bi bi-plus-lg" title="add new"></a>    
+    </div>
+    <table class="table table-borderless">
+        <thead class="table-success">
+            <tr  class="text-center">
+                <th>@Html.DisplayNameFor(x => x.Id)</th>
+                <th>@Html.DisplayNameFor(x => x.Title)</th>
+                <th>@Html.DisplayNameFor(x => x.PublishDate)</th>
+                <th>@Html.DisplayNameFor(x => x.Rating)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="table-light">
+            
+            @foreach(var b in Model)
+            {
+                <tr class="text-center">
+                    <td>@b.Id.ToString("00")</td>
+                    <td>@Html.DisplayFor(x=> b.Title)</td>
+                    <td>@Html.DisplayFor(x=> b.PublishDate)</td>
+                    <td>@Html.DisplayFor(x=> b.Rating)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Articles", new {id = b.Id}, new {@class="btn btn-sm btn-primary"})
+                        @Html.ActionLink("Delete", "Delete", "Articles", new {id = b.Id}, new {@class="btn btn-sm btn-danger"})
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+@section styles{
+    <link href="~/libs/icons/font/bootstrap-icons.css" rel="stylesheet" />       
+}

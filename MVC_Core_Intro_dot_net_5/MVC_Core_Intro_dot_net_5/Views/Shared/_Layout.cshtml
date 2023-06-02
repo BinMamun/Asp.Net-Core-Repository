@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/libs/bootstrap/css/bootstrap.css" rel="stylesheet" />    
+    <script src="~/libs/bootstrap/js/bootstrap.bundle.js"></script>  
+    
+    <style>
+        body {
+            padding-top: 70px;
+        }
+
+        .body-content {
+            min-height: calc(100vh - 150px);
+        }       
+        
+    </style>
+    @await RenderSectionAsync("styles", false)
+    
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-success fixed-top navbar-expand-md ">
+        <div class="container">
+            <a asp-controller="Home" asp-action="Index" class="navbar-brand">Core_01</a>
+            <div class="navbar-collapse collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Articles" asp-action="Index" class="nav-link">Articles</a>
+                    </li>                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <div class="container-fluid">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @await RenderSectionAsync("scripts", false)
+</body>
+</html>
