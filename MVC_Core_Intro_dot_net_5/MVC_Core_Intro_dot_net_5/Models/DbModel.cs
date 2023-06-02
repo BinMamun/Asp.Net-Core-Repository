@@ -13,7 +13,7 @@ namespace MVC_Core_Intro_dot_net_5.Models
         [Required, Column(TypeName ="Date"),
             DataType(DataType.Date),
             Display(Name ="Publish Date"),
-            DisplayFormat(DataFormatString ="{0:dd-mm-yyyy}")]
+            DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime PublishDate { get; set; }
         public double Rating { get; set; }
     }

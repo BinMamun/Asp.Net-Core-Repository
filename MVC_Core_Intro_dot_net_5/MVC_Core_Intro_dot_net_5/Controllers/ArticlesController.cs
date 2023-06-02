@@ -20,5 +20,16 @@ namespace MVC_Core_Intro_dot_net_5.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Create(Article a)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Articles.Add(a);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(a);
+        }
     }
 }
