@@ -1,0 +1,36 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="mt-3">
+    <span class="fs-4">Edit Employee</span>
+    <hr />
+    <div class=" d-flex justify-content-end">
+        <a asp-controller="Employees" asp-action="Index" class="btn btn-sm btn-outline-warning text-dark">Back</a>
+    </div>
+    <form method="post" asp-controller="Employees" asp-action="Delete" class="mt-5" asp-route-EmployeeId="@Model.EmployeeId">
+        <div class="row mb-2">
+            <label asp-for="EmployeeName" class="col-form-label col-form-label-sm col-2 text-end"></label>
+            <div class="col-4">
+                <input readonly asp-for="EmployeeName" class="form-control" type="text" />                
+            </div>            
+        </div>
+        <div class="row mb-2">
+            <label asp-for="JoinDate" class="col-form-label col-form-label-sm col-2 text-end"></label>
+            <div class="col-4">
+                <input readonly asp-for="JoinDate" class="form-control" type="date" />
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label asp-for="Contact" class="col-form-label col-form-label-sm col-2 text-end"></label>
+            <div class="col-4">
+                <input readonly asp-for="Contact" class="form-control" type="text" />
+            </div>            
+        </div>
+        <div class="col-2">
+            <button type="submit" title="delete" class="btn btn-warning" style="margin-left: 24rem;">Delete</button>
+        </div>
+    </form>
+</div>
+
